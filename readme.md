@@ -73,20 +73,17 @@ O acesso a APIs é centralizado através do **Azure API Management**:
 
 ## **Pesquisa**
 
-### **1. Ronin Network**
+**1. Ronin Network**  
 - **Data:** Março de 2022  
 - **Descrição:** Um grupo de cibercriminosos, supostamente norte-coreano, realizou a maior invasão de transação de criptomoedas até então. Usando chaves privadas roubadas dos proprietários, os invasores sacaram moedas no valor de **US$ 625 milhões**, incluindo Ethereum e USDC stablecoin. Este ataque se tornou um exemplo notório de invasão por roubo de chaves.
 - [Fonte](https://www.infomoney.com.br/mercados/ronin-do-axie-infinity-sofre-maior-hack-da-historia-das-criptomoedas-avaliado-em-us-625-milhoes/)
 
-
-### **2. Poly Network**
+**2. Poly Network**
 - **Data:** Agosto de 2021  
 - **Descrição:** Explorando uma vulnerabilidade no software da Poly Network, um invasor roubou **US$ 611 milhões** em criptomoedas. Posteriormente, o invasor revelou que o ataque foi realizado apenas para testar as defesas do sistema e devolveu todos os fundos.
 - [Fonte](https://www.moneytimes.com.br/poly-network-sofre-o-maior-hack-da-historia-do-setor-defi/)
 
-
-
-### **3. FTX**
+**3. FTX**
 - **Data:** Novembro de 2022 e Janeiro de 2023  
 - **Descrição:**  
   - **Primeiro ataque:** Durante o processo de falência da FTX, cibercriminosos roubaram mais de **US$ 600 milhões** de suas carteiras.  
@@ -94,19 +91,19 @@ O acesso a APIs é centralizado através do **Azure API Management**:
 - [Fonte](https://www.infomoney.com.br/mercados/ftx-sofre-suposto-hack-e-tem-contas-drenadas-em-us-600-milhoes/)
 
 
-### **4. Binance**
+**4. Binance**
 - **Data:** Outubro de 2022  
 - **Descrição:** Os invasores exploraram a ponte entre cadeias da **BSC Token Hub** para criar moedas extras da Binance. Em seguida, desviaram todas as moedas disponíveis, totalizando um roubo de **US$ 570 milhões**. Este ataque destacou vulnerabilidades nas pontes entre blockchains.
 - [Fonte](https://portaldobitcoin.uol.com.br/manha-cripto-bnb-recua-3-apos-rombo-de-us-100-milhoes-na-bnb-smart-chain-e-bitcoin-btc-em-compasso-de-espera/)
 
 
-### **5. Coincheck**
+**5. Coincheck**
 - **Data:** Janeiro de 2018  
 - **Descrição:** Em Tóquio, os invasores exploraram uma vulnerabilidade na carteira virtual quente da Coincheck para roubar **US$ 534 milhões** em moedas NEM. A empresa reembolsou os clientes usando seu capital, estabelecendo um padrão para empresas invadidas.
 - [Fonte](https://www.infomoney.com.br/mercados/exchange-japonesa-perde-r-17-bilhao-no-maior-roubo-de-criptomoedas-da-historia/)
 
 
-### **6. Mt. Gox**
+**6. Mt. Gox**
 - **Datas:** 2011 e 2014  
 - **Descrição:**  
   - **Primeiro ataque:** Em 2011, quando processava cerca de 70% das transações de criptomoedas, a Mt. Gox perdeu moedas no valor de **US$ 400 mil**.  
@@ -114,18 +111,18 @@ O acesso a APIs é centralizado através do **Azure API Management**:
 - [Fonte](https://www.infomoney.com.br/colunistas/moeda-na-era-digital/o-colapso-da-mtgox-uma-corrida-bancaria-digital-parte-1-2/)
 
 
-### **7. Bitmart**
+**7. Bitmart**
 - **Data:** Dezembro de 2021  
 - **Descrição:** Usando chaves de administrador roubadas, os invasores acessaram as moedas da exchange Bitmart e desviaram mais de **US$ 196 milhões**, movimentando os fundos por Ethereum e Binance.
 - [Fonte](https://www.moneytimes.com.br/apos-hack-de-us-196-milhoes-bitmart-diz-que-compensara-vitimas-com-fundos-proprios/)
 
 
-### **8. Nomad Bridge**
+**8. Nomad Bridge**
 - **Data:** 2022  
 - **Descrição:** Explorando uma vulnerabilidade na funcionalidade de movimentação entre blockchains da Nomad Bridge, os invasores roubaram **US$ 190 milhões**. Apenas **US$ 36 milhões** dos fundos foram recuperados.
 - [Fonte](https://www.cisoadvisor.com.br/bridge-de-blockchain-perde-us-190-milhoes-em-poucas-horas/)
 
-## **Perfis de Atacantes**
+## 1 - **Perfis de Atacantes**
 
 
 | **Perfil**               | **Aplica** | **Interesse**         | **Motivação**                                                                                      | **Métodos**                                                                                  |
@@ -143,7 +140,7 @@ O acesso a APIs é centralizado através do **Azure API Management**:
 | ❌ **Bot-Herder**          | Não        | Baixo                | Controlar botnets para uso malicioso.                                                             | Infraestrutura em nuvem dificulta ataques baseados em domínio físico de servidores.         |
 | ❌ **Fraudador (Genérico)**| Não        | Baixo                | Explorar falhas genéricas no sistema para lucro.                                                  | Controles já minimizam impacto deste perfil.                                                |
 
-## Objetivos dos Atacantes
+## 2 - Objetivos dos Atacantes
 
 | **Perfil**               | **Objetivo Primário**                                                   | **Objetivo Secundário**                                                                                   |
 |---------------------------|------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
