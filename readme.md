@@ -151,6 +151,8 @@ O acesso a APIs é centralizado através do **Azure API Management**:
 | **Crime Organizado**      | Financiar atividades ilícitas e lavar dinheiro.                       | Roubar ativos digitais para maximizar lucros e dificultar rastreamento por autoridades.                 |
 | **Estelionatário**        | Manipular processos financeiros para desviar valores.                 | Explorar falhas em movimentações financeiras ou políticas de segurança da exchange.                     |
 
----
+## 3 - Árvore de Ameaças
+
+
 
 
