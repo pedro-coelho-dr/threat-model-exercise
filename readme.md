@@ -153,6 +153,85 @@ O acesso a APIs é centralizado através do **Azure API Management**:
 
 ## 3 - Árvore de Ameaças
 
+### Raízes
+
+| **Raiz**                    | **Descrição**                                                                                      | **Impacto**                                                                                  | **Perfis Relacionados**                                     |
+|-----------------------------|--------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|-----------------------------------------------------------|
+| **Indisponibilidade Operacional** | Tornar a plataforma ou seus serviços críticos indisponíveis para usuários legítimos.             | Perda de receita, danos reputacionais, interrupção de negócios e perda de confiança.        | Hacktivista, Ransomware Hacker, Crime Organizado           |
+| **Roubo de Dados Sensíveis**      | Obter acesso e exfiltrar dados confidenciais, como informações de clientes, transações e credenciais. | Exposição pública, multas regulatórias, perda de confiança e possível extorsão.             | Crime Organizado, Ransomware Hacker, Hacktivista           |
+| **Fraude Financeira**             | Movimentação ou desvio de fundos ilícitos através da plataforma.                               | Prejuízo financeiro direto, problemas regulatórios e danos à reputação.                    | Fraudador Bancário, Estelionatário, Crime Organizado       |
+| **Lavagem de Dinheiro**           | Utilizar a plataforma para ocultar a origem de fundos ilícitos.                               | Problemas legais, multas regulatórias e risco de perder licenças.                          | Fraudador Bancário, Fraudador/Carder, Crime Organizado     |
+| **Dano Reputacional**             | Prejudicar a credibilidade da plataforma através de ações que expõem falhas ou criam desconfiança. | Perda de clientes e receita, pressão de reguladores e dificuldade em atrair novos investidores. | Hacktivista, Crime Organizado, Ransomware Hacker           |
+
+
+### Indisponibilidade Operacional
+```mermaid
+flowchart TD
+    A1[Indisponibilidade Operacional]
+    A1 --> A2[Causa 1]
+    A1 --> A3[Causa 2]
+    A1 --> A4[Causa 3]
+    A2 --> A5[Detalhe]
+    A3 --> A6[Detalhe]
+    A4 --> A7[Detalhe]
+```
+
+
+### Roubos de Dados Sensíveis
+
+```mermaid
+flowchart TD
+    A1[Roubos de Dados Sensíveis]
+    A1 --> A2[Causa 1]
+    A1 --> A3[Causa 2]
+    A1 --> A4[Causa 3]
+    A2 --> A5[Detalhe]
+    A3 --> A6[Detalhe]
+    A4 --> A7[Detalhe]
+```
+
+
+### Fraude Financeira
+
+```mermaid
+flowchart TD
+    A1[Fraude Financeira]
+    A1 --> A2[Causa 1]
+    A1 --> A3[Causa 2]
+    A1 --> A4[Causa 3]
+    A2 --> A5[Detalhe]
+    A3 --> A6[Detalhe]
+    A4 --> A7[Detalhe]
+```
+
+
+### Lavagem de Dinheiro
+
+```mermaid
+flowchart TD
+    A1[Lavagem de Dinheiro]
+    A1 --> A2[Causa 1]
+    A1 --> A3[Causa 2]
+    A1 --> A4[Causa 3]
+    A2 --> A5[Detalhe]
+    A3 --> A6[Detalhe]
+    A4 --> A7[Detalhe]
+```
+
+
+### Dano Reputacional
+
+```mermaid
+flowchart TD
+    A1[Dano Reputacional]
+    A1 --> A2[Causa 1]
+    A1 --> A3[Causa 2]
+    A1 --> A4[Causa 3]
+    A2 --> A5[Detalhe]
+    A3 --> A6[Detalhe]
+    A4 --> A7[Detalhe]
+```
+
 
 
 
