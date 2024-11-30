@@ -248,7 +248,6 @@ flowchart TD
 
 ## Ameaças
 
-Escolha de Ameaças Analisadas
 
 Para a modelagem de ameaças da CypherTrade, selecionamos três cenários principais que representam riscos críticos e comuns à operação de uma exchange de criptomoedas.
 
@@ -346,7 +345,6 @@ graph TD
 | **Execução de código malicioso no sistema**    | Antivírus e EDR (Endpoint Detection and Response) | Alta                         | Detecta e bloqueia ações maliciosas em endpoints antes que causem danos.                                           |
 | **Rastreamento e exfiltração de dados sensíveis** | DLP (Data Loss Prevention)                  | Média                             | Monitora e bloqueia a transmissão de dados sensíveis, mas depende de configurações robustas.                      |
 
----
 
 ### Melhorias e Planos de Contenção
 
@@ -510,7 +508,6 @@ graph TD
 | **Acesso a dados sensíveis**           | Key Vault                                   | Alta                              | Protege credenciais e chaves de acesso, mitigando acessos indevidos.          |
 | **Ataque à disponibilidade do serviço** | Application Gateway + WAF                  | Média                             | Monitora tráfego, mas precisa de alertas mais rápidos para anomalias.         |
 
----
 
 ## Melhorias e Planos de Contenção
 
