@@ -3,7 +3,7 @@
 
 Este trabalho faz parte da disciplina **Modelagem de Ameaças**, da **Especialização em Cibersegurança** da **Cesar School**, ministrada pelo professor **Rafael Lachi**. O objetivo é analisar o cenário de uma exchange fictícia, chamada **CypherTrade**, aplicando os passos descritos na atividade para identificar ameaças, avaliar riscos e propor controles de segurança.
 
-Este trabalho foi desenvolvido pelo grupo formado por **Francisco Moura**, **Pedro Coelho**, **Rivaldo Junior** e **Valdenir Junior**.
+Este trabalho foi desenvolvido pelo grupo formado por **Francisco Moura Fé**, **Pedro Coelho**, **Rivaldo Junior** e **Valdenir Junior**.
 
 ### **Objetivo da Atividade**
 - Identificar os perfis de atacantes mais prováveis e justificar suas escolhas.
@@ -168,12 +168,16 @@ O acesso a APIs é centralizado através do **Azure API Management**:
 ```mermaid
 flowchart TD
     A1[Indisponibilidade Operacional]
-    A1 --> A2[Causa 1]
-    A1 --> A3[Causa 2]
-    A1 --> A4[Causa 3]
-    A2 --> A5[Detalhe]
-    A3 --> A6[Detalhe]
-    A4 --> A7[Detalhe]
+    A1 --> A2[Dados Críticos Indisponíveis]
+    A1 --> A3[Servidores Backend Parados]
+    A1 --> A4[Falhas em Conexões Externas]
+    A2 --> A5[Ransomware]
+    A2 --> A6[Exclusão ou Corrupção de Arquivos]
+    A3 --> A7[Ataque DDoS]
+    A3 --> A8[Comprometimento de Configurações na Nuvem]
+    A4 --> A9[Indisponibilidade de DNS]
+    A4 --> A10[APIs Externas Inacessíveis]
+    A5 --> A12[PDF malicioso]
 ```
 
 
@@ -182,12 +186,16 @@ flowchart TD
 ```mermaid
 flowchart TD
     A1[Roubos de Dados Sensíveis]
-    A1 --> A2[Causa 1]
-    A1 --> A3[Causa 2]
-    A1 --> A4[Causa 3]
-    A2 --> A5[Detalhe]
-    A3 --> A6[Detalhe]
-    A4 --> A7[Detalhe]
+    A1 --> A2[Comprometimento de Credenciais Privilegiadas]
+    A1 --> A3[Exposição de APIs]
+    A1 --> A4[Interceptação de Comunicações]
+    A2 --> A5[Acesso Não Autorizado a Banco de Dados]
+    A3 --> A6[Uso de Tokens API Roubados]
+    A3 --> A7[Exploração de Falhas em Autenticação]
+    A4 --> A8[Ataques Man-in-the-Middle]
+    A4 --> A9[Comprometimento de Certificados]
+
+
 ```
 
 
@@ -196,12 +204,14 @@ flowchart TD
 ```mermaid
 flowchart TD
     A1[Fraude Financeira]
-    A1 --> A2[Causa 1]
-    A1 --> A3[Causa 2]
-    A1 --> A4[Causa 3]
-    A2 --> A5[Detalhe]
-    A3 --> A6[Detalhe]
-    A4 --> A7[Detalhe]
+    A1 --> A2[Manipulação de Saldos]
+    A1 --> A3[Transações Fraudulentas]
+    A1 --> A4[Uso Indevido de Contas Privilegiadas]
+    A2 --> A5[Alteração em Bases de Dados]
+    A3 --> A6[Desvio de Fundos]
+    A4 --> A7[Criação de Usuários Falsos]
+
+
 ```
 
 
@@ -210,12 +220,13 @@ flowchart TD
 ```mermaid
 flowchart TD
     A1[Lavagem de Dinheiro]
-    A1 --> A2[Causa 1]
-    A1 --> A3[Causa 2]
-    A1 --> A4[Causa 3]
-    A2 --> A5[Detalhe]
-    A3 --> A6[Detalhe]
-    A4 --> A7[Detalhe]
+    A1 --> A2[Uso de Identidades Falsas]
+    A1 --> A3[Movimentação Fracionada]
+    A1 --> A4[Exploração de Integrações Externas]
+    A2 --> A5[Falsificação no Processo de KYC]
+    A3 --> A6[Transações em Pequenos Valores]
+    A4 --> A7[Uso Indevido de APIs Parceiras]
+
 ```
 
 
@@ -224,14 +235,287 @@ flowchart TD
 ```mermaid
 flowchart TD
     A1[Dano Reputacional]
-    A1 --> A2[Causa 1]
-    A1 --> A3[Causa 2]
-    A1 --> A4[Causa 3]
-    A2 --> A5[Detalhe]
-    A3 --> A6[Detalhe]
-    A4 --> A7[Detalhe]
+    A1 --> A2[Vazamento de Dados]
+    A1 --> A3[Exploração de Vulnerabilidades]
+    A1 --> A4[Campanhas de Desinformação]
+    A2 --> A5[Divulgação de Informações de Clientes]
+    A3 --> A6[Publicação de Exploits]
+    A4 --> A7[Propagação de Fake News]
+
 ```
 
 
 
+## Ameaças
 
+Escolha de Ameaças Analisadas
+
+Para a modelagem de ameaças da CypherTrade, selecionamos três cenários principais que representam riscos críticos e comuns à operação de uma exchange de criptomoedas.
+
+1. PDF Malicioso
+
+Esta ameaça envolve a utilização de arquivos PDF maliciosos enviados a colaboradores ou sistemas da CypherTrade, visando explorar vulnerabilidades para obter acesso não autorizado ou executar códigos maliciosos. Ela é relevante pela dependência da organização em processos de comunicação e validação que frequentemente envolvem documentos eletrônicos.
+
+2. Ransomware
+
+O ransomware é uma das ameaças mais críticas para organizações que operam na nuvem, especialmente para aquelas que armazenam dados sensíveis como os de clientes e transações financeiras. Este vetor de ataque pode comprometer a disponibilidade dos sistemas e exigir resgates em criptomoedas, além de representar riscos à reputação da empresa.
+
+3. Comprometimento de Configuração de Nuvem
+
+Com a CypherTrade operando em uma infraestrutura híbrida baseada na nuvem, erros de configuração em serviços críticos podem ser explorados por agentes maliciosos. Essas vulnerabilidades podem incluir permissões excessivas, ausência de políticas de segurança e falhas no gerenciamento de acessos. 
+
+
+
+```mermaid
+flowchart TD
+    A1[Indisponibilidade Operacional]
+    A1 --> A2[Dados Críticos Indisponíveis]
+    A1 --> A3[Servidores Backend Parados]
+    A2 --> A5[Ransomware]
+    A3 --> A8[Comprometimento de Configurações na Nuvem]
+    A5 --> A12[PDF malicioso]
+```
+
+## PDF Malicioso
+
+### Controles
+
+#### **Controle 1.** Bloqueio de Extensões Perigosas
+Esse controle impede que arquivos com extensões conhecidas por serem exploradas em ataques, como `.pdf`, `.exe` e `.js`, sejam recebidos ou executados no ambiente da organização. Ele é essencial para minimizar o risco de que documentos maliciosos sejam abertos inadvertidamente, reduzindo a superfície de ataque e protegendo sistemas contra ameaças conhecidas.
+
+#### **Controle 2**. Filtragem de E-mails e Anexos
+A filtragem atua diretamente no tráfego de e-mails, analisando anexos e links antes que eles cheguem aos usuários. Com o uso de sandboxing e análise heurística, é possível bloquear anexos maliciosos e links de phishing, prevenindo que arquivos maliciosos sejam executados ou que usuários sejam redirecionados a páginas fraudulentas. Esse controle reduz significativamente a probabilidade de um ataque bem-sucedido por engenharia social.
+
+#### **Controle 3.** Atualização e Aplicação de Patches
+Manter todos os sistemas e softwares atualizados com patches de segurança é fundamental para corrigir vulnerabilidades exploráveis por documentos maliciosos. Softwares de leitura de PDFs, por exemplo, são alvos comuns de ataques que exploram falhas conhecidas. A aplicação regular de patches fecha essas brechas, reduzindo o risco de exploração de vulnerabilidades tanto em sistemas locais quanto em serviços na nuvem.
+
+### Avaliação
+
+
+| **Quesito**                                  | **Sem Controles** | **Controle 1** | **Controle 2** | **Controle 3** |
+|----------------------------------------------|-------------------|---------------------------|---------------------------|-----------------------------|
+| **Nível de habilidade** | 6                 | 6                         | 6                         | 6                           |
+| **Motivação**    | 9                 | 7                         | 5                         | 3                           |
+| **Oportunidade**   | 9                 | 4                         | 3                         | 2                           |
+| **Tamanho**                | 9                 | 9                         | 9                         | 9                           |
+| **Facilidade em ser descoberta**| 7                 | 7                         | 6                         | 4                           |
+| **Facilidade em ser explorada**    | 5                 | 4                         | 3                         | 2                           |
+| **Awareness**                 | 6                 | 6                         | 6                         | 4                           |
+| **Detecção de intrusão**    | 8                 | 8                         | 5                         | 5                           |
+| **Perda de confidencialidade** | 6              | 4                         | 3                         | 2                           |
+| **Perda de integridade**| 1                 | 1                         | 1                         | 1                           |
+| **Indisponibilidade**   | 1                 | 1                         | 1                         | 1                           |
+| **Perda de rastreabilidade** | 9              | 9                         | 5                         | 5                           |
+| **Dano financeiro**      | 3                 | 2                         | 2                         | 1                           |
+| **Dano de reputação**          | 5                 | 4                         | 3                         | 1                           |
+| **Falta de aderência às normas** | 5              | 5                         | 4                         | 2                           |
+| **Violação de privacidade**     | 5                 | 5                         | 4                         | 3                           |
+
+
+### Risco Geral
+
+| **RISCO**          | **Sem Controle** | **Controle 1** | **Controle 2** | **Controle 3** |
+|-----------------------|------------------|----------------|----------------|----------------|
+| **Probabilidade**     | HIGH            | HIGH           | MEDIUM         | MEDIUM         |
+| **Impacto Técnico**   | MEDIUM          | MEDIUM         | LOW            | LOW            |
+| **Impacto Negócio**   | MEDIUM          | MEDIUM         | MEDIUM         | LOW            |
+| **Risco**             | HIGH            | HIGH           | MEDIUM         | LOW            |
+
+
+### Grafo de Ameaça
+```mermaid
+graph TD
+    A[PDF Malicioso]
+    A --> B[Recebimento de arquivo malicioso por e-mail]
+    B --> C[Abertura do arquivo por um colaborador]
+    C --> D[Exploração de vulnerabilidades do leitor de PDF]
+    D --> E[Execução de código malicioso no sistema]
+    E --> F[Rastreamento e exfiltração de dados sensíveis]
+    E --> G[Comprometimento do sistema local]
+    G --> H[Escalamento para rede interna]
+    F --> I[Impacto financeiro e reputacional]
+    G --> J[Interrupção operacional devido a malware]
+```
+### Avaliação dos Controles
+
+| **Etapa**                              | **Ferramentas/Controles**                   | **Eficácia**                     | **Observação**                                                                 |
+|----------------------------------------|---------------------------------------------|-----------------------------------|--------------------------------------------------------------------------------|
+| **Recebimento de arquivo malicioso por e-mail** | Filtragem de e-mails e anexos               | Alta                              | Previne o envio de anexos suspeitos ao destinatário por meio de análises heurísticas e sandboxing.                 |
+| **Abertura do arquivo por um colaborador**     | Educação e conscientização dos colaboradores | Média                             | Reduz a chance de abertura de arquivos maliciosos, mas não elimina a possibilidade de erro humano.                |
+| **Exploração de vulnerabilidades do leitor de PDF** | Atualização e aplicação de patches          | Alta                              | Corrige vulnerabilidades conhecidas, reduzindo o risco de exploração por malwares.                                |
+| **Execução de código malicioso no sistema**    | Antivírus e EDR (Endpoint Detection and Response) | Alta                         | Detecta e bloqueia ações maliciosas em endpoints antes que causem danos.                                           |
+| **Rastreamento e exfiltração de dados sensíveis** | DLP (Data Loss Prevention)                  | Média                             | Monitora e bloqueia a transmissão de dados sensíveis, mas depende de configurações robustas.                      |
+
+---
+
+### Melhorias e Planos de Contenção
+
+| **Problema**                               | **Melhoria Necessária**                                                          | **Plano de Contenção**                                                                                      |
+|-------------------------------------------|----------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| **Filtragem insuficiente de e-mails maliciosos** | Melhorar as regras heurísticas e aumentar o uso de sandboxing no servidor de e-mail. | Configurar análises avançadas de anexos.              |
+| **Educação limitada dos colaboradores**    | Implementar treinamentos periódicos sobre engenharia social e segurança cibernética. | Criar campanhas de phishing simuladas para medir e reforçar a conscientização.                            |
+| **Falta de atualizações em sistemas e leitores de PDF** | Automatizar as atualizações de software e realizar auditorias regulares de versão. | Configurar ferramentas para gestão de atualizações em dispositivos corporativos.    |
+| **Rastreamento insuficiente de atividades maliciosas** | Implementar soluções de DLP e monitoramento de rede.                                | Configurar alertas em ferramentas de SIEM.                    |
+| **Execução não detectada de códigos maliciosos** | Reforçar o uso de soluções de EDR para bloqueio ativo de comportamentos suspeitos.  | Integrar o EDR com ferramentas de resposta automática a incidentes.                |
+
+
+## Ransomware
+
+### Controles
+#### Controle 1. Backups Regulares e Offline
+A realização de backups frequentes e armazenados offline garante que os dados possam ser restaurados em caso de criptografia maliciosa. Esse controle reduz a gravidade do impacto de ataques de ransomware, permitindo uma recuperação rápida e minimizando o tempo de inatividade. Além disso, os backups offline evitam que os dados sejam comprometidos pelo próprio ataque.
+
+#### Controle 2. Segmentação de Rede
+A segmentação de rede divide a infraestrutura em zonas isoladas, limitando a propagação do ransomware caso um segmento seja comprometido. Isso ajuda a conter o dano em uma parte específica da rede, protegendo sistemas críticos e reduzindo o alcance do ataque.
+
+#### Controle 3. Monitoramento Ativo
+O monitoramento contínuo identifica atividades incomuns, como acessos não autorizados ou criptografia anômala de arquivos. Essa detecção precoce permite que medidas de contenção sejam aplicadas rapidamente, evitando a disseminação do ransomware pela rede.
+
+#### Controle 4. Educação e Conscientização
+A educação dos colaboradores sobre as práticas seguras, como evitar abrir anexos suspeitos ou clicar em links desconhecidos, reduz significativamente o risco de infecção inicial por ransomware. Um ambiente de trabalho mais consciente das ameaças melhora a postura de segurança da organização.
+
+### Avaliação
+
+| **Quesito**                          | **Sem Controle** | **Controle 1** | **Controle 2** | **Controle 3** | **Controle 4** |
+|--------------------------------------|------------------|----------------|----------------|----------------|----------------|
+| **Nível de habilidade**              | 4                | 4              | 4              | 4              | 4              |
+| **Motivação**                        | 9                | 9              | 9              | 7              | 5              |
+| **Oportunidade**                     | 9                | 9              | 9              | 7              | 4              |
+| **Tamanho**                          | 9                | 9              | 9              | 9              | 9              |
+| **Facilidade em ser descoberta**     | 7                | 7              | 7              | 7              | 7              |
+| **Facilidade em ser explorada**      | 7                | 7              | 7              | 5              | 3              |
+| **Awareness**                        | 9                | 9              | 9              | 9              | 9              |
+| **Detecção de intrusão**             | 9                | 9              | 9              | 3              | 3              |
+| **Perda de confidencialidade**       | 9                | 6              | 6              | 3              | 3              |
+| **Perda de integridade**             | 9                | 3              | 2              | 2              | 2              |
+| **Indisponibilidade**                | 9                | 7              | 5              | 3              | 3              |
+| **Perda de rastreabilidade**         | 9                | 9              | 9              | 3              | 3              |
+| **Dano financeiro**                  | 9                | 3              | 2              | 2              | 2              |
+| **Dano de reputação**                | 9                | 5              | 4              | 3              | 2              |
+| **Falta de aderência às normas**     | 7                | 5              | 4              | 3              | 2              |
+| **Violação de privacidade**          | 7                | 7              | 5              | 4              | 4              |
+
+### Risco Geral
+
+| **RISCO**             | **Sem Controle** | **Controle 1** | **Controle 2** | **Controle 3** | **Controle 4** |
+|-----------------------|------------------|----------------|----------------|----------------|----------------|
+| **Probabilidade**     | HIGH             | HIGH           | HIGH           | HIGH           | MEDIUM         |
+| **Impacto Técnico**   | HIGH         | HIGH           | MEDIUM           | LOW         | LOW            |
+| **Impacto Negócio**   | HIGH             | MEDIUM         | MEDIUM         | MEDIUM         | LOW            |
+| **Risco**             | CRITICAL         | CRITICAL       | HIGH           | HIGH           | LOW            |
+
+### Grafo de Ameaça
+
+```mermaid
+graph TD
+    A[Ransomware]
+    A --> B[Acesso inicial ao sistema]
+    B --> C[Entrega de ransomware]
+    C --> D[Execução do ransomware no sistema]
+    D --> E[Criptografia de arquivos locais]
+    D --> F[Propagação para outros dispositivos na rede]
+    E --> G[Exigência de resgate]
+    F --> H[Criptografia de dados críticos em servidores]
+    G --> I[Impacto financeiro]
+    H --> J[Interrupção operacional]
+    J --> K[Dano reputacional]
+```
+
+
+### Avaliação dos Controles
+
+| **Etapa**                              | **Ferramentas/Controles**                   | **Eficácia**                     | **Observação**                                                                 |
+|----------------------------------------|---------------------------------------------|-----------------------------------|--------------------------------------------------------------------------------|
+| **Detecção inicial de ransomware**     | Monitoramento ativo                         | Alta                              | Identifica comportamentos anômalos, como criptografia em massa de arquivos.   |
+| **Prevenção de propagação**            | Segmentação de rede                         | Alta                              | Limita a propagação do ransomware para sistemas críticos.                     |
+| **Recuperação de dados criptografados**| Backups regulares e offline                | Alta                              | Garante a recuperação de dados sem pagar o resgate.                           |
+| **Educação dos colaboradores**         | Programas de conscientização               | Média                             | Reduz o risco de infecção inicial por erro humano, mas depende da adesão do time.|
+| **Bloqueio de execução maliciosa**     | Soluções de EDR                             | Alta                              | Detecta e interrompe processos maliciosos em tempo real.                      |
+
+
+### Melhorias e Planos de Contenção
+
+| **Problema**                               | **Melhoria Necessária**                                                          | **Plano de Contenção**                                                                                      |
+|-------------------------------------------|----------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| **Falta de detecção precoce de ransomware**| Melhorar a visibilidade com soluções de monitoramento contínuo.                  | Configurar alertas no SIEM para atividades incomuns, como criptografia em massa.                           |
+| **Propagação em redes não segmentadas**    | Revisar políticas de segmentação de rede e isolamento.                           | Implementar zonas de segurança específicas para proteger ativos críticos.                                  |
+| **Dados irrecuperáveis sem backups**       | Estabelecer rotinas de backup offline e testes regulares de restauração.         | Configurar backup diário automatizado com retenção offline segura.                                         |
+| **Educação insuficiente dos colaboradores**| Criar treinamentos regulares de resposta a incidentes e conscientização sobre phishing. | Implementar campanhas de simulação de ataques de ransomware.                                              |
+| **Execução de códigos maliciosos**         | Adotar ferramentas avançadas de EDR com resposta automatizada.                   | Integrar EDR com soluções de resposta automática para bloquear hosts infectados em tempo real.             |
+
+
+## Comprometimento de Configuração de Nuvem
+### Controles
+#### Controle 1. Azure Policy
+Azure Policy garante que as configurações de recursos estejam em conformidade com as diretrizes organizacionais, implementando políticas que evitam erros de configuração. Ele identifica e corrige automaticamente configurações inadequadas, garantindo um ambiente seguro e alinhado às melhores práticas.
+
+#### Controle 2. Azure Active Directory
+O Azure Active Directory (AAD) gerencia identidades e acessos, fornecendo autenticação segura e controle de permissões. Ele ajuda a prevenir acessos não autorizados e configurações incorretas ao implementar autenticação multifator (MFA) e segregação de funções.
+
+#### Controle 3. Azure Monitor e Log Analytics
+Azure Monitor e Log Analytics oferecem visibilidade contínua do ambiente, permitindo o rastreamento de alterações de configuração e atividades incomuns. Esses controles ajudam a identificar e responder rapidamente a configurações comprometedoras ou atividades suspeitas.
+
+### Avaliação
+
+| **Quesito**                          | **Sem Controle** | **Controle 1** | **Controle 2** | **Controle 3** |
+|--------------------------------------|------------------|----------------|----------------|----------------|
+| **Nível de habilidade**              | 6                | 6              | 6              | 6              |
+| **Motivação**                        | 9                | 9              | 9              | 9              |
+| **Oportunidade**                     | 7                | 4              | 2              | 1              |
+| **Tamanho**                          | 6                | 6              | 6              | 6              |
+| **Facilidade em ser descoberta**     | 7                | 5              | 4              | 3              |
+| **Facilidade em ser explorada**      | 5                | 3              | 2              | 2              |
+| **Awareness**                        | 6                | 6              | 6              | 6              |
+| **Detecção de intrusão**             | 8                | 3              | 3              | 1              |
+| **Perda de confidencialidade**       | 9                | 6              | 4              | 3              |
+| **Perda de integridade**             | 7                | 5              | 3              | 2              |
+| **Indisponibilidade**                | 7                | 5              | 4              | 3              |
+| **Perda de rastreabilidade**         | 9                | 3              | 1              | 1              |
+| **Dano financeiro**                  | 7                | 3              | 2              | 2              |
+| **Dano de reputação**                | 5                | 3              | 2              | 2              |
+| **Falta de aderência às normas**     | 5                | 3              | 2              | 2              |
+| **Violação de privacidade**          | 7                | 5              | 4              | 4              |
+
+### Risco Geral
+
+| **RISCO**             | **Sem Controle** | **Controle 1** | **Controle 2** | **Controle 3** |
+|-----------------------|------------------|----------------|----------------|----------------|
+| **Probabilidade**     | HIGH             | MEDIUM         | MEDIUM         | MEDIUM         |
+| **Impacto Técnico**   | HIGH         | MEDIUM         | MEDIUM         | LOW            |
+| **Impacto Negócio**   | HIGH             | MEDIUM         | LOW        | LOW            |
+| **Risco**             | CRITICAL         | MEDIUM         | MEDIUM         | LOW            |
+
+
+### Grafo de Ameaça
+
+```mermaid
+graph TD
+    A[Comprometimento de Configuração de Nuvem]
+    A --> B[Erro de configuração no Azure Policy]
+    B --> C[Exposição de recursos críticos]
+    C --> D[Escalação de privilégios não autorizada]
+    D --> E[Acesso a dados sensíveis]
+    C --> F[Ataque à disponibilidade do serviço]
+    F --> G[Impacto financeiro e reputacional]
+```
+
+
+### Avaliação dos Controles
+
+| **Etapa**                              | **Ferramentas/Controles**                   | **Eficácia**                     | **Observação**                                                                 |
+|----------------------------------------|---------------------------------------------|-----------------------------------|--------------------------------------------------------------------------------|
+| **Erro de configuração no Azure Policy** | Azure Policy                                | Alta                              | Detecta e corrige configurações inválidas automaticamente.                     |
+| **Exposição de recursos críticos**     | Azure Monitor e Log Analytics               | Média                             | Detecta atividades incomuns, mas pode não ser suficiente sem regras robustas. |
+| **Escalação de privilégios não autorizada** | Azure Active Directory (AAD)               | Alta                              | Gerencia acesso e reduz privilégios excessivos.                               |
+| **Acesso a dados sensíveis**           | Key Vault                                   | Alta                              | Protege credenciais e chaves de acesso, mitigando acessos indevidos.          |
+| **Ataque à disponibilidade do serviço** | Application Gateway + WAF                  | Média                             | Monitora tráfego, mas precisa de alertas mais rápidos para anomalias.         |
+
+---
+
+## Melhorias e Planos de Contenção
+
+| **Problema**                               | **Melhoria Necessária**                                                          | **Plano de Contenção**                                                                                      |
+|-------------------------------------------|----------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| **Detecção limitada de atividades incomuns no Azure Monitor** | Configurar alertas personalizados e integrar com sistemas de resposta automática. | Usar playbooks no Azure Sentinel para bloquear acessos suspeitos em tempo real.                            |
+| **Possível falha em prevenir escalonamento de privilégios**   | Revisar permissões no AAD periodicamente usando análise de acesso.                | Criar uma regra de contenção no Azure para bloquear tentativas de escalonamento não autorizadas.            |
+| **Impacto lento no tráfego anômalo detectado pelo Application Gateway** | Implementar métricas baseadas em comportamento para tráfego.                     | Automatizar resposta a eventos com bloqueio automático para IPs suspeitos no WAF.                         |
